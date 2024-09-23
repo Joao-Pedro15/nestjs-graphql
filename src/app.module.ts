@@ -3,6 +3,8 @@ import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { StudentsModule } from './modules/students/students.module';
+import { Student } from './modules/students/entities/student.entity';
 
 @Module({
   imports: [
@@ -13,14 +15,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: "test",
       password: "test",
       database: "test",
-      entities: [],
-      synchronize: true, // habilita o true somente em producao
-      loggin: true
+      entities: [Student],
+      synchronize: false, // habilita o true somente em producao
+      loggin:true
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true
     }),
+    StudentsModule
   ],
   controllers: [],
   providers: [AppService],
