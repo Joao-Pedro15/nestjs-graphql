@@ -9,7 +9,7 @@ import { Student } from './modules/students/entities/student.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: "postgres",
       host: "localhost",
       port: 5432,
       username: "test",
