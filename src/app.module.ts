@@ -10,6 +10,7 @@ import { Discipline } from './modules/disciplines/entities/discipline.entity';
 import { Lesson } from './modules/lessons/entities/lesson.entity';
 import { Content } from './modules/contents/entities/content.entity';
 import { ContentsModule } from './modules/contents/contents.module';
+import { LessonsModule } from './modules/lessons/lessons.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ContentsModule } from './modules/contents/contents.module';
     StudentsModule,
     DisciplinesModule,
     ContentsModule,
+    LessonsModule
   ],
   controllers: [],
   providers: [AppService],
